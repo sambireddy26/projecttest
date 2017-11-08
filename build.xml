@@ -1,0 +1,30 @@
+<project name="trail2" default="jar" basedir=".">
+
+<property name="version" value="java.version"/>
+<property name="pjtname" value="trail2"/>
+
+<target name="clean">
+	<delete dir="src"/>
+</target>
+
+<target name="init" depends="clean">
+	<mkdir dir="src"/>
+</target>
+
+<target name="copy" depends="init">
+
+	<copy todir="src">
+	
+		<fileset dir="C:\Users\KOLLI\.jenkins\workspace\trail2">
+		     <include name="*.class"/>
+		</fileset>
+
+	</copy>
+</target>
+
+
+<target name="jar" depends="copy">
+	<jar destfile="C:\Users\KOLLI\.jenkins\workspace\trail2\${pjtname}.jar" basedir="C:\Users\KOLLI\.jenkins\workspace\trail2\src"/>
+</target>
+
+</project>
